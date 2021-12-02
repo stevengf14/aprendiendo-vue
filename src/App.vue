@@ -2,20 +2,31 @@
   <div id="app">
     <HeaderComponent></HeaderComponent>
     <Slider></Slider>
+    <div class="center">
+      <!--<LastArticles></LastArticles>-->
+      <router-view></router-view>
+      <Sidebar></Sidebar>
+      <div class="clearfix"></div>
+    </div>
+    <FooterComponent></FooterComponent>
   </div>
 </template>
 
 <script>
-import HeaderComponent from './components/HeaderComponent.vue'
-import Slider from './components/Slider.vue'
+import HeaderComponent from "./components/HeaderComponent.vue";
+import Slider from "./components/Slider.vue";
+import Sidebar from "./components/Sidebar.vue";
+import FooterComponent from "./components/FooterComponent.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     HeaderComponent,
-    Slider
-  }
-}
+    Slider,
+    Sidebar,
+    FooterComponent
+  },
+};
 </script>
 
 <style>
@@ -30,5 +41,5 @@ export default {
 }
 */
 
-@import './assets/css/styles.css'
+@import "./assets/css/styles.css";
 </style>

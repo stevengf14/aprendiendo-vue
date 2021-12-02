@@ -3,17 +3,17 @@
     <h1>{{ msg }}</h1>
     <h2>{{ texto }}</h2>
     <div style="background: red">
-      <MiComponente></MiComponente>
+      <MyComponent></MyComponent>
     </div>
   </div>
 </template>
 
 <script>
-import MiComponente from './MiComponente.vue'
+import MyComponent from './MyComponent.vue'
 export default {
   name: 'HelloWorld',
   components: {
-    MiComponente
+    MyComponent
   },
   props: {
     msg: String
