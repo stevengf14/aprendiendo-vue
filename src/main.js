@@ -16,7 +16,7 @@ const routes = [
   { path: "/home", component: LastArticles },
   { path: "/blog", component: Blog },
   { path: "/form", component: Form },
-  { path: "/page", component: Page },
+  { path: "/page/:id?", name: "page", component: Page },
   { path: "/last-articles", component: LastArticles },
   { path: "/my-component", component: MyComponent },
   { path: "hello-world", component: HelloWorld },
