@@ -9,21 +9,17 @@
 </template>
 
 <script>
-import MyComponent from './MyComponent.vue'
 export default {
-  name: 'HelloWorld',
-  components: {
-    MyComponent
-  },
+  name: "HelloWorld",
   props: {
-    msg: String
+    msg: String,
   },
-  data(){
+  data() {
     return {
-      texto: "Hola Mundo desde componente"
-    }
-  }
-}
+      texto: "Hola Mundo desde componente",
+    };
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
