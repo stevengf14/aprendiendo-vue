@@ -3,6 +3,7 @@
     <h2 class="subheader">Página de Pruebas</h2>
     <h3>{{ id_from_url }}</h3>
     <button @click="updateName()">Update Name</button>
+    <button @click="redirectToBlog()">Redirect to Blog</button>
     <h4>{{ name }}</h4>
   </section>
 </template>
@@ -33,6 +34,10 @@ export default {
     updateName() {
       this.name = "ANDRES";
       console.log(this.name);
+    },
+    redirectToBlog() {
+      this.$router.push("/blog");
+      // this.$router.push({ name: "page", params: { id: "Redirection" } });
     },
   },
 };

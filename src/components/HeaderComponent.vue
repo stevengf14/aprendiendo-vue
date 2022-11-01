@@ -11,19 +11,19 @@
       <nav id="menu">
         <ul>
           <li>
-            <router-link to="/home">Inicio</router-link>
+            <router-link to="/home" active-class="active">Inicio</router-link>
           </li>
           <li>
-            <router-link to="/blog">Blog</router-link>
+            <router-link to="/blog" active-class="active">Blog</router-link>
           </li>
           <li>
-            <router-link to="/form">Formulario</router-link>
+            <router-link to="/form" active-class="active">Formulario</router-link>
           </li>
           <li>
-            <router-link to="/page">Página</router-link>
+            <router-link to="/page" active-class="active">Página</router-link>
           </li>
           <li>
-            <router-link to="/my-component">Mi Componente</router-link>
+            <router-link to="/my-component" active-class="active">Mi Componente</router-link>
           </li>
         </ul>
       </nav>
