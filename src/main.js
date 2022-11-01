@@ -7,6 +7,7 @@ import HelloWorld from "./components/HelloWorld";
 import Blog from "./components/Blog";
 import Form from "./components/Form";
 import Page from "./components/Page";
+import ErrorComponent from "./components/ErrorComponent";
 
 Vue.config.productionTip = false;
 
@@ -20,6 +21,7 @@ const routes = [
   { path: "/last-articles", component: LastArticles },
   { path: "/my-component", component: MyComponent },
   { path: "hello-world", component: HelloWorld },
+  { path: "*", component: ErrorComponent },
 ];
 
 const router = new VueRouter({
