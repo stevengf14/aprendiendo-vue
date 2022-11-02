@@ -23,6 +23,11 @@
     </p>
 
     <p class="alert-success-provitional" v-else>ERES MENOR DE EDAD</p>
+
+    <h2>Directiva Iterativa</h2>
+    <ol>
+      <li v-for="movie in movies" :key="movie">{{ movie }}</li>
+    </ol>
   </section>
 </template>
 
@@ -35,6 +40,7 @@ export default {
       subtitulo: "Soy el subtítulo de mi componente",
       name: "",
       age: 18,
+      movies: ["Batman vs Superman", "Spiderman", "Jumanji", "Doctor Strange"],
     };
   },
 };
