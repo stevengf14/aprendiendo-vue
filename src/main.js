@@ -8,6 +8,7 @@ import Blog from "./components/Blog";
 import Form from "./components/Form";
 import Page from "./components/Page";
 import ErrorComponent from "./components/ErrorComponent";
+import Movies from "./components/Movies";
 
 Vue.config.productionTip = false;
 
@@ -18,6 +19,7 @@ const routes = [
   { path: "/blog", component: Blog },
   { path: "/form", component: Form },
   { path: "/page/:id?", name: "page", component: Page },
+  { path: "/movies", name: "movies", component: Movies },
   { path: "/last-articles", component: LastArticles },
   { path: "/my-component", component: MyComponent },
   { path: "hello-world", component: HelloWorld },

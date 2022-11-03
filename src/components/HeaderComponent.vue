@@ -23,7 +23,7 @@
             <router-link to="/page" active-class="active">Página</router-link>
           </li>
           <li>
-            <router-link to="/my-component" active-class="active">Mi Componente</router-link>
+            <router-link to="/movies" active-class="active">Películas</router-link>
           </li>
         </ul>
       </nav>
