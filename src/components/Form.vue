@@ -1,6 +1,6 @@
 <template>
   <div class="general">
-    <Slider></Slider>
+    <Slider text="Formulario"></Slider>
     <div class="center">
       <section id="content">
         <h2 class="subheader">Formulario</h2>

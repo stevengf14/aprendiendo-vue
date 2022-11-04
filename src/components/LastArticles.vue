@@ -1,6 +1,9 @@
 <template>
   <div class="general">
-    <Slider></Slider>
+    <Slider
+      text="Bienvenido al Curso de Vue por Steven Guamán"
+      home="true"
+    ></Slider>
     <div class="center">
       <section id="content">
         <h2 class="subheader">Últimos artículos</h2>
