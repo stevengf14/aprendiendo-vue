@@ -3,38 +3,20 @@
     <h2 class="subheader">Peliculas</h2>
     <!--Listado de peliculas-->
     <div id="movies">
-      <article
-        class="article-item"
-        v-for="movie in movies"
-        v-bind:key="movie.title"
-      >
-        <div class="image-wrap">
-          <img :src="movie.image" :alt="movie.title" :title="movie.title" />
-        </div>
-
-        <h2>{{ movie.title }}</h2>
-        <span
-          class="date"
-          :class="{
-            yeargreen: movie.year >= 2015,
-            yearred: movie.year < 2015,
-          }"
-        >
-          {{ movie.year }}
-        </span>
-        <a href="#">Leer más</a>
-
-        <div class="clearfix"></div>
-      </article>
-
-      <!--AÑADIR ARTICULOS VIA JS-->
+      <div v-for="movie in movies" v-bind:key="movie.title">
+        <Movie :movie="movie" />
+      </div>
     </div>
   </section>
 </template>
 
 <script>
+import Movie from "./Movie";
 export default {
   name: "Movies",
+  components: {
+    Movie,
+  },
   data() {
     return {
       movies: [
