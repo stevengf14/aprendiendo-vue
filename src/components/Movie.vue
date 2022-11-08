@@ -14,6 +14,11 @@
       {{ movie.year }}
     </span>
     <a href="#">Leer más</a>
+    <input
+      type="button"
+      value="Marcar como favorito"
+      @click="sendFavoriteToParent(movie)"
+    />
     <div class="clearfix"></div>
   </article>
 </template>
@@ -22,5 +27,10 @@
 export default {
   name: "Movie",
   props: ["movie"],
+  methods: {
+    sendFavoriteToParent(movie) {
+      this.$emit("favorite", movie);
+    },
+  },
 };
 </script>
