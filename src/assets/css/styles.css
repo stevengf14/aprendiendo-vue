@@ -312,17 +312,27 @@ textarea {
 }
 
 .article-item .image-wrap {
+  background-color: black;
   width: 130px;
   height: 130px;
-  overflow: hidden;
-  float: left;
+  overflow:hidden;
+  float:left;
   margin-right: 15px;
-  border: 1px solid #ccc;
+  border: 3px solid #ccc;
+  position: relative;
 }
 
-.article-item .image-wrap img {
-  height: 100%;
-  text-align: center;
+.article-item .image-wrap img{
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .article-item h2 {
