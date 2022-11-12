@@ -17,6 +17,7 @@ Vue.use(VueRouter);
 Vue.use(Vuelidate);
 
 const routes = [
+  { path: "/", component: LastArticles },
   { path: "/home", component: LastArticles },
   { path: "/blog", component: Blog },
   { path: "/form", component: Form },
