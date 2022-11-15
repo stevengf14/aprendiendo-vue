@@ -33,7 +33,7 @@ export default {
   },
   data() {
     return {
-      articles: [],
+      articles: null,
       url: Global.url,
     };
   },
