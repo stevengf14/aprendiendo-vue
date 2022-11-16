@@ -14,6 +14,7 @@ import Form from "./components/Form";
 import Page from "./components/Page";
 import ErrorComponent from "./components/ErrorComponent";
 import Movies from "./components/Movies";
+import Search from "./components/Search"
 
 Vue.config.productionTip = false;
 
@@ -29,6 +30,7 @@ const routes = [
   { path: "/page/:id?", name: "page", component: Page },
   { path: "/movies", name: "movies", component: Movies },
   { path: "/last-articles", component: LastArticles },
+  { path: "/search/:searchString", component: Search },
   { path: "/my-component", component: MyComponent },
   { path: "hello-world", component: HelloWorld },
   { path: "*", component: ErrorComponent },
