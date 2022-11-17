@@ -43,7 +43,6 @@ export default {
         if (res.data.status == "success") {
           this.articles = res.data.articles;
         }
-        console.log(this.articles);
       });
     },
   },

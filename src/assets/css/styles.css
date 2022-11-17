@@ -315,14 +315,14 @@ textarea {
   background-color: black;
   width: 130px;
   height: 130px;
-  overflow:hidden;
-  float:left;
+  overflow: hidden;
+  float: left;
   margin-right: 15px;
   border: 3px solid #ccc;
   position: relative;
 }
 
-.article-item .image-wrap img{
+.article-item .image-wrap img {
   max-height: 100%;
   max-width: 100%;
   width: auto;
@@ -373,8 +373,16 @@ textarea {
 }
 
 .article-detail .image-wrap img {
-  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
   height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .article-detail .subheader {

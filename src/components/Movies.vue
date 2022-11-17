@@ -38,7 +38,6 @@ export default {
   },
   methods: {
     favoriteMovieComming(favoriteMovie) {
-      console.log(favoriteMovie.title);
       this.favorite = favoriteMovie;
     },
   },

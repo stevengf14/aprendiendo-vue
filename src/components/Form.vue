@@ -117,7 +117,6 @@ export default {
   },
   methods: {
     showUser() {
-      console.log(this.user);
       this.submitted = true;
       this.$v.$touch();
       if (this.$v.$invalid) {

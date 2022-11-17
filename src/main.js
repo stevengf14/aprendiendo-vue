@@ -16,6 +16,7 @@ import ErrorComponent from "./components/ErrorComponent";
 import Movies from "./components/Movies";
 import Search from "./components/Search";
 import Redirect from "./components/Redirect";
+import Article from "./components/Article";
 
 Vue.config.productionTip = false;
 
@@ -27,6 +28,7 @@ const routes = [
   { path: "/", component: LastArticles },
   { path: "/home", component: LastArticles },
   { path: "/blog", component: Blog },
+  { path: "/article/:id", name: "article", component: Article },
   { path: "/form", component: Form },
   { path: "/page/:id?", name: "page", component: Page },
   { path: "/movies", name: "movies", component: Movies },

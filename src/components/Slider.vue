@@ -16,8 +16,5 @@
 export default {
   name: "Slider",
   props: ["text", "home"],
-  mounted(){
-    console.log(this.home)
-  }
 };
 </script>
