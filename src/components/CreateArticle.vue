@@ -1,47 +1,4 @@
-<template>
-  <div class="general">
-    <div class="center">
-      <section id="content">
-        <h1 class="subheader">Crear Artículo</h1>
-        <!-- Form-->
-        <form class="mid-form" v-on:submit.prevent="createArticle()">
-          <div class="form-group">
-            <label for="title">Título</label>
-            <input type="text" name="title" v-model="article.title" required />
-            <div v-if="submitted && !$v.article.title.required">
-              El campo no puede estar vacío
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="content">Contenido</label>
-            <textarea
-              name="content"
-              v-model="article.content"
-              required
-            ></textarea>
-            <div v-if="submitted && !$v.article.content.required">
-              El campo no puede estar vacío
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="file0">Imagen</label>
-            <input
-              type="file"
-              id="file"
-              ref="file"
-              name="file0"
-              @change="fileChange()"
-            />
-          </div>
-          <div class="clearfix"></div>
-          <input type="submit" value="Guarda" class="btn btn-success" />
-        </form>
-      </section>
-      <Sidebar></Sidebar>
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</template>
+<template src="./CreateArticle.html"></template>
 
 <script>
 import axios from "axios";
