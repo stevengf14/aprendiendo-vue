@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar.vue";
 import Global from "../Global";
 import Article from "../models/Article";
 import { required } from "vuelidate/lib/validators";
+import swal from "sweetalert";
 
 export default {
   name: "CreateArticle",
@@ -60,16 +61,30 @@ export default {
                   )
                   .then((response) => {
                     if (response.data.article) {
+                      swal(
+                        "Artículo creado",
+                        "Artículo creado correctamente",
+                        "success"
+                      );
                       this.article = response.data.article;
                       this.$router.push("/blog");
                     } else {
-                      // Show error alert
+                      swal(
+                        "Error",
+                        "Error durante la creación del artículo",
+                        "error"
+                      );
                     }
                   })
                   .catch((error) => {
                     console.log(error);
                   });
               } else {
+                swal(
+                  "Artículo creado",
+                  "Artículo creado correctamente",
+                  "success"
+                );
                 this.article = response.data.article;
                 this.$router.push("/blog");
               }
