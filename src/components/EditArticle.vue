@@ -9,7 +9,7 @@ import { required } from "vuelidate/lib/validators";
 import swal from "sweetalert";
 
 export default {
-  name: "CreateArticle",
+  name: "EditArticle",
   components: {
     Sidebar,
   },
@@ -19,6 +19,8 @@ export default {
       article: new Article("", "", null, ""),
       submitted: false,
       file: "",
+      isEdit: true,
+      articleId: "",
     };
   },
   validations: {
@@ -31,6 +33,10 @@ export default {
       },
     },
   },
+  mounted() {
+    this.articleId = this.$route.params.id;
+    this.getArticle(this.articleId);
+  },
   methods: {
     fileChange() {
       this.file = this.$refs.file.files[0];
@@ -42,8 +48,9 @@ export default {
       if (this.$v.$invalid) {
         return false;
       } else {
+        console.log(this.articleId);
         axios
-          .post(this.url + "save", this.article)
+          .put(this.url + "article/" + this.articleId, this.article)
           .then((response) => {
             if (response.data.status == "success") {
               // Upload file
@@ -62,16 +69,16 @@ export default {
                   .then((response) => {
                     if (response.data.article) {
                       swal(
-                        "Artículo creado",
-                        "Artículo creado correctamente",
+                        "Artículo editado",
+                        "Artículo editado correctamente",
                         "success"
                       );
                       this.article = response.data.article;
-                      this.$router.push("/blog");
+                      this.$router.push("/article/" + this.articleId);
                     } else {
                       swal(
                         "Error",
-                        "Error durante la creación del artículo",
+                        "Error durante la edición del artículo",
                         "error"
                       );
                     }
@@ -81,12 +88,12 @@ export default {
                   });
               } else {
                 swal(
-                  "Artículo creado",
-                  "Artículo creado correctamente",
+                  "Artículo editado",
+                  "Artículo editado correctamente",
                   "success"
                 );
                 this.article = response.data.article;
-                this.$router.push("/blog");
+                this.$router.push("/article/" + this.articleId);
               }
             }
           })
@@ -94,6 +101,13 @@ export default {
             console.log(error);
           });
       }
+    },
+    getArticle(articleId) {
+      axios.get(this.url + "article/" + articleId).then((res) => {
+        if (res.data.status == "success") {
+          this.article = res.data.article;
+        }
+      });
     },
   },
 };

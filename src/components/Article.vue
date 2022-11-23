@@ -24,6 +24,12 @@
           </p>
 
           <div class="clearfix"></div>
+          <router-link :to="'/edit/' + article._id" class="btn btn-warning"
+            >Editar</router-link
+          >
+          <a @click="deleteArticle(article._id)" class="btn btn-danger"
+            >Eliminar</a
+          >
         </article>
       </section>
       <Sidebar></Sidebar>
@@ -35,6 +41,7 @@
 import axios from "axios";
 import Sidebar from "./Sidebar.vue";
 import Global from "../Global";
+import swal from "sweetalert";
 
 export default {
   name: "Article",
@@ -58,6 +65,40 @@ export default {
           this.article = res.data.article;
         }
       });
+    },
+    deleteArticle(articleId) {
+      swal({
+        title: "¿Estás seguro?",
+        text: "Una vez eliminado, los cambios no se podrán revertir!",
+        icon: "warning",
+        buttons: ["No", "Si"],
+        dangerMode: true,
+      })
+        .then((willDelete) => {
+          if (willDelete) {
+            axios.delete(this.url + "article/" + articleId).then((response) => {
+              if (response.data.status == "success") {
+                swal(
+                  "Artículo eliminado",
+                  "Artículo  eliminado correctamente",
+                  "success"
+                );
+                this.$router.push("/blog");
+              } else {
+                swal(
+                  "Error",
+                  "Error durante la eliminación del artículo",
+                  "error"
+                );
+              }
+            });
+          } else {
+            swal("Artículo no eliminado");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };

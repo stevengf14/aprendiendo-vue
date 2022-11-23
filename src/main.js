@@ -18,6 +18,7 @@ import Search from "./components/Search";
 import Redirect from "./components/Redirect";
 import Article from "./components/Article";
 import CreateArticle from "./components/CreateArticle";
+import EditArticle from "./components/EditArticle";
 
 Vue.config.productionTip = false;
 
@@ -31,6 +32,7 @@ const routes = [
   { path: "/blog", component: Blog },
   { path: "/article/:id", name: "article", component: Article },
   { path: "/create-article", name: "create", component: CreateArticle },
+  { path: "/edit/:id", name: "edit", component: EditArticle },
   { path: "/form", component: Form },
   { path: "/page/:id?", name: "page", component: Page },
   { path: "/movies", name: "movies", component: Movies },

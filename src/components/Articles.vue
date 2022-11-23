@@ -25,7 +25,9 @@
           </router-link>
         </h2>
         <span class="date">{{ article.date | moment("from", "now") }}</span>
-        <a href="#">Leer más</a>
+        <router-link :to="{ name: 'article', params: { id: article._id } }"
+          >Leer más</router-link
+        >
         <div class="clearfix"></div>
       </article>
     </div>
